@@ -1,6 +1,8 @@
 package com.jobayer.elegantemporium.models;
 
 import jakarta.persistence.*;
+
+import java.sql.Timestamp;
 import java.util.List;
 
 @Entity
@@ -35,5 +37,35 @@ public class Cart {
 
     // Getters and setters for all fields
 
-    // Other methods and custom business logic can be added here
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public List<CartItem> getCartItems() {
+        return cartItems;
+    }
+
+    public void setCartItems(List<CartItem> cartItems) {
+        this.cartItems = cartItems;
+    }
+
+    public Timestamp getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
+    }
 }

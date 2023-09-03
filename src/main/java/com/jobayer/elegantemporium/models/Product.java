@@ -19,8 +19,9 @@ public class Product {
     @Column(nullable = false)
     private double price;
 
-    @Column
-    private String category;
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category; // Reference to the Category
 
     // Constructors, getters, and setters
 
@@ -29,7 +30,7 @@ public class Product {
         // Default constructor
     }
 
-    public Product(String name, String description, double price, String category) {
+    public Product(String name, String description, double price, Category category) {
         this.name = name;
         this.description = description;
         this.price = price;
@@ -70,14 +71,12 @@ public class Product {
         this.price = price;
     }
 
-    public String getCategory() {
+    public Category getCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
+    public void setCategory(Category category) {
         this.category = category;
     }
 
-
-    // Other methods and custom business logic can be added here
 }
